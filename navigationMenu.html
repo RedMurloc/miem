@@ -2,10 +2,12 @@
 <html>
     <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.js">    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <meta charset="utf-8">
         <title>navMenu</title>
-        <style>
+<!--         <style>
             ul.nav{
                 margin-left: 0px;
                 padding-left: 0px;
@@ -25,13 +27,35 @@
             ul.nav li:last-child a {
                 border-bottom: 1px dashed #333;
             }
-        </style>
+        </style> -->
     </head>
     <body>
-        <ul class="nav">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Project 4</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="mapbasics.html">Карта</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="build.html">Построение отчётов</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="view.html">Просмотр отчётов</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </nav>
+<!--         <ul class="nav">
             <li><a href="mapbasics.html">Карта</a></li>
             <li><a href="build.html">Построение отчётов</a></li>
             <li><a href="view.html">Просмотр отчётов</a></li>
-        </ul>
+        </ul> -->
     </body>
 </html>
