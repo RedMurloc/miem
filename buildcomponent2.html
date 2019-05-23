@@ -16,10 +16,21 @@
     </script>
     <style type="text/css">
     	.table-names > li{
-    		list-style-image: url("images/table_icon_small.png");
+    		list-style-image: url("images/table_icon_small.png")!important;
+    		user-select: none;
+    		cursor: pointer;
     	}
     	.table-names li > ul > li{
     		list-style-image: url("images/checkbox_icon_small.png");
+    		user-select: none;
+    		cursor: pointer;
+    	}
+
+    	.kek {
+    		color: red;
+    	}
+    	.checked{
+    		list-style-image: url("images/checked_icon_small.jpg")!important;
     	}
     </style>
 </head>
@@ -45,11 +56,11 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 style="font-family: Arial;">New element name</h3>
+					<!-- <h3 style="font-family: Arial;">Покупатели (национальность)</h3> -->
 					<div class="float-right">
-						<button type="button" class="btn btn-outline-primary">Добавить компонент</button>
+						<!-- <button type="button" class="btn btn-outline-primary">Добавить компонент</button>
 						<button type="button" id="loadButton" class="btn btn-outline-primary">Загрузить данные с сервера</button>
-						<button type="button" class="btn btn-outline-success">Сохранить</button>
+						<button type="button" class="btn btn-outline-success">Сохранить</button> -->
 					</div>
 				</div>
 			</div>
@@ -58,11 +69,15 @@
 			<div class="row" style="margin-top: 40px;">
 				<div class="col-lg-2"></div>
 				<div class="col-lg-8">
-					<div style="height: 500px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">
+					<!--<div style="height: 500px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">
 						<p>Визуализированные данные:</p>
-						<hr style="border-color: black;">
-						<canvas id="Cnvs" width="720" height="430" style="border:1px solid #000000;"> 
+						<hr style="border-color: black;">-->
+						<input id="componentTitle" type="text" name="componentTitle" style="font-family: Arial; outline: none; border:none; width: 100%; text-align: center; font-size: 22pt;" placeholder="Название компонента" />
+						<canvas id="Cnvs" width=900" height="430" style="border:1px solid #000000; margin: 0 auto;"> 
 						</canvas>
+					<!--</div>-->
+					<div style="margin-top: 40px;">
+						<div style="text-align: center;"><button type="button" class="btn btn-outline-success">Сохранить</button></div>
 					</div>
 				</div>
 				<div class="col-lg-2"></div>
@@ -72,17 +87,41 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h4 style="font-family: Arial;">Доступные таблицы и атрибуты</h3>
-		
+						<ul class="table-names">
+							<li>Petrol1 
+								<ul>
+									<li>year</li>
+									<li>price</li>
+								</ul>
+							</li>
+							<li>Petrol2
+								<ul>
+									<li>producer</li>
+									<li>amount</li>
+								</ul>
+							</li>
+							<li>Petrol3
+								<ul>
+									<li>consumer</li>
+									<li>amount</li>
+								</ul>
+							</li>
+							<li>Mordovia
+								<ul>
+									<li>year</li>
+									<li>population</li>
+								</ul>
+							</li>
+						</ul>
 				</div>
 			</div>
  			<div class="row border-top">
 				<div class="col-lg-12">
 					<h4 style="font-family: Arial;">Виды элементов (диаграммы)</h4>
-					<p>Здесь список всех диаграм, доступных для отображения</p>
 					<div class="btn-group-vertical">
-						<button id="lineButton" type="button" class="btn btn-outline-primary">График</button>
-						<button id="barButton" type="button" class="btn btn-outline-primary">Столбчатая диаграмма</button>
-						<button id="pieButton" type="button" class="btn btn-outline-primary">Круговая диаграмма</button>
+						<button id="lineButton" type="button" class="btn btn-outline-primary" style="margin-bottom: 20px;">График</button>
+						<button id="barButton" type="button" class="btn btn-outline-primary" style="margin-bottom: 20px;">Столбчатая диаграмма</button>
+						<button id="pieButton" type="button" class="btn btn-outline-primary" >Круговая диаграмма</button>
 					</div>
 				</div>
 			</div>
@@ -92,8 +131,14 @@
 
 <script type="text/javascript" src="chart.js/dist/Chart.min.js"></script>
 <script type="text/javascript" src="popChart.js"> </script>
+<script type="text/javascript" src="buildComponent.js"></script>
+<script type="text/javascript">
+	$("ul>li>ul>li").click(function(){
+		$(this).toggleClass('checked');
+	});
+</script>
 <script>
-document.getElementById('loadButton').onclick = function {
+document.getElementById('loadButton').onclick = function () {
     var xhr = new XMLHttpRequest();
 	xhr.open('GET', 'phones.json', true);
 	xhr.send(); // (1)
