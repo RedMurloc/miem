@@ -1,4 +1,4 @@
-  component1.onclick = function() {
+  function comp1() {
   	if(!$(this).hasClass('checked')){
   		$('#report').append('<div class="col-lg-4">\
 					<div style="height: 300px; width: 300px; margin-top: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">\
@@ -17,7 +17,7 @@
   	}
   }
 
-    component2.onclick = function() {
+  function comp2() {
   	if(!$(this).hasClass('checked')){
   		$('#report').append('<div class="col-lg-4">\
 					<div style="height: 300px; width: 300px; margin-top: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">\
@@ -36,7 +36,7 @@
   	}
   }
 
-    component3.onclick = function() {
+  function comp3() {
   	if(!$(this).hasClass('checked')){
   		$('#report').append('<div class="col-lg-4">\
 					<div style="height: 300px; width: 300px; margin-top: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">\
@@ -55,7 +55,7 @@
   	}
   }
 
-    component4.onclick = function() {
+  function comp4() {
   	if(!$(this).hasClass('checked')){
   		$('#report').append('<div class="col-lg-4">\
 					<div style="height: 300px; width: 300px; margin-top: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">\
@@ -74,7 +74,7 @@
   	}
   }
 
-    component5.onclick = function() {
+  function comp5() {
   	if(!$(this).hasClass('checked')){
   		$('#report').append('<div class="col-lg-4">\
 					<div style="height: 300px; width: 300px; margin-top: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">\
@@ -93,13 +93,12 @@
   	}
   }
 
-  component6.onclick = function() {
-    if(!$(this).hasClass('checked')){
+  function comp6() {
       $('#report').append('<div class="col-lg-4">\
           <div id="Cnvs6" style="height: 300px; width: 300px; margin-top: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">\
            \
           </div>');
-        myMap = new ymaps.Map('Cnvs6', {
+        var myMap = new ymaps.Map('Cnvs6', {
         center: [55.755768, 37.617671],
         zoom: 10
     }, {
@@ -172,7 +171,7 @@
             // Свойства.
             properties: {
                 // Контент метки.
-                iconContent: 'Собачий приют им. Тихонова',
+                iconContent: 'Собачий приют',
             }
         }, {
             // Опции.
@@ -182,9 +181,4 @@
             draggable: false
         })
     );
-    }
-    else{
-      myMap.destroy();
-      $('#Cnvs6').parent().remove();
-    }
   }

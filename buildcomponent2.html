@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/dataTables.min.js"></script>
-
+<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=d47de9da-3a1c-4862-b980-73b783752e87"></script>
 <title>Создание компонента отчета</title>
 <script> 
     $(function(){
@@ -68,7 +68,8 @@
 			</div>
 			<div class="row" style="margin-top: 40px;">
 				<div class="col-lg-2"></div>
-				<div class="col-lg-8">
+				<!-- <div class="col-lg-8" id ="divForComponents"> -->
+				<div class="row">
 					<!--<div style="height: 500px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">
 						<p>Визуализированные данные:</p>
 						<hr style="border-color: black;">-->
@@ -77,7 +78,7 @@
 						</canvas>
 					<!--</div>-->
 					<div style="margin-top: 40px;">
-						<div style="text-align: center;"><button type="button" class="btn btn-outline-success">Сохранить</button></div>
+						<!--<div style="text-align: center;"><button type="button" class="btn btn-outline-success">Сохранить</button></div>-->
 					</div>
 				</div>
 				<div class="col-lg-2"></div>
@@ -120,8 +121,10 @@
 					<h4 style="font-family: Arial;">Виды элементов (диаграммы)</h4>
 					<div class="btn-group-vertical">
 						<button id="lineButton" type="button" class="btn btn-outline-primary" style="margin-bottom: 20px;">График</button>
-						<button id="barButton" type="button" class="btn btn-outline-primary" style="margin-bottom: 20px;">Столбчатая диаграмма</button>
-						<button id="pieButton" type="button" class="btn btn-outline-primary" >Круговая диаграмма</button>
+						<button id="barButton" type="button" class="btn btn-outline-primary" style="margin-bottom: 20px;">Столбчатая диаграмма</button>	
+						<button id="pieButton" type="button" class="btn btn-outline-primary" style="margin-bottom: 20px;" >Круговая диаграмма</button>
+						<button id="mapButton" type="button" class="btn btn-outline-primary" style="margin-bottom: 20px;" >Карта</button>
+						<div style="text-align: center;"><button type="button" class="btn btn-outline-success">Сохранить</button></div>
 					</div>
 				</div>
 			</div>

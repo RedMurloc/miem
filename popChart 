@@ -1,19 +1,15 @@
+/*
 //var popCanvas = document.getElementById('popChart').getContext("2d");
 Chart.defaults.global.maintainAspectRatio = false;
-
-var currentChart;
+var	Cnvs = document.getElementById('Cnvs').getContext('2d');
 
 var option = {
-  animation: {
+	animation: {
         duration:5000
     },
     responsive:false,
     maintainAspectRatio: false,
-    position: 'center',
-    title: {
-      display: false,
-      text: 'To be determined'
-    }
+    position: 'center'
 };
 
 var numbers = [1379302771, 1281935911, 326625791, 260580739, 207353391, 204924861, 190632261, 157826578, 142257519, 126451398];
@@ -62,7 +58,7 @@ var backgroundColors = [
 var top_cars_per_capita = {
     labels: top_cars_per_capita_countries,
     datasets: [{
-      label: 'Cars per capita',
+      label: 'Petrol production millions barrels per day',
       data: top_cars_per_capita_amount,
       backgroundColor: backgroundColors
     }]
@@ -144,3 +140,29 @@ var Ussr_car_production_line = {
       pointBackgroundColor: 'rgba(255,150,0,0.5)'
     }]
   }
+
+
+lineButton.onclick = function() {
+    var lineChart = new Chart(Cnvs, {
+  		type: 'line',
+  		data: petrol_price_years_line,
+  		options: option
+	});
+  };
+
+barButton.onclick = function() {
+    var barChart = new Chart(Cnvs, {
+  		type: 'bar',
+  		data: top_cars_per_capita,
+  		options: option
+	});
+  };
+
+pieButton.onclick = function() {
+    var pieChart = new Chart(Cnvs, {
+  		type: 'pie',
+  		data: top_cars_per_capita,
+  		options: option
+	});
+  };
+*/
