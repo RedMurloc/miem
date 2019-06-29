@@ -25,7 +25,7 @@
 					</div>');
   		var Cnvs = document.getElementById('Cnvs2').getContext('2d');
   		var barChart = new Chart(Cnvs, {
-	      type: 'bar',
+	      type: 'pie',
 	      data: petrol_producer_and_amount,
 	      options: option
 	    });
@@ -116,6 +116,7 @@
             properties: {
                 // Контент метки.
                 iconContent: 'DogParking',
+                hintContent: '48   собак'
             }
         }, {
             // Опции.
@@ -135,6 +136,7 @@
             properties: {
                 // Контент метки.
                 iconContent: 'Альма',
+                hintContent: '27 собак'
             }
         }, {
             // Опции.
@@ -154,6 +156,7 @@
             properties: {
                 // Контент метки.
                 iconContent: 'Приют для животных',
+                hintContent: '61 собака'
             }
         }, {
             // Опции.
@@ -172,7 +175,8 @@
             // Свойства.
             properties: {
                 // Контент метки.
-                iconContent: 'Собачий приют им. Тихонова',
+                iconContent: 'МИЭМ',
+                hintContent: '2 собаки'
             }
         }, {
             // Опции.
@@ -193,7 +197,7 @@
     if(!$(this).hasClass('checked')){
       $('#report').append('<div class="col-lg-4">\
           <div id="text1" style="height: 300px; width: 300px; margin-top: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">\
-            Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст МНОГО ТЕКСТА 1234567789009429444444 \
+            Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. С другой стороны реализация намеченных плановых заданий\
           </div>');
 
     }
@@ -204,7 +208,7 @@
 
   component8.onclick = function() {
     if(!$(this).hasClass('checked')){
-      $('#report').append('<div class="col-lg-4">\
+      $('#report').append('<div style="height: 300px; width: 300px; margin-top: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center; border: 1px solid black;">\
           <table id="table1">\
   <tr>\
     <th>Company</th>\
@@ -230,16 +234,6 @@
     <td>Island Trading</td>\
     <td>Helen Bennett</td>\
     <td>UK</td>\
-  </tr>\
-  <tr>\
-    <td>Laughing Bacchus Winecellars</td>\
-    <td>Yoshi Tannamuri</td>\
-    <td>Canada</td>\
-  </tr>\
-  <tr>\
-    <td>Magazzini Alimentari Riuniti</td>\
-    <td>Giovanni Rovelli</td>\
-    <td>Italy</td>\
   </tr>\
 </table>');
 
